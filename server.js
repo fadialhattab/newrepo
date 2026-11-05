@@ -30,7 +30,7 @@ app.post("/books", (req, res) => {
 
 //get all books
 app.get("/books", (req, res) => {
-    const books = db.prepare("select * from books order by id desc").all()
+    const books = db.prepare("select * from books order by rowid desc").all()
     res.status(200).json(books)
 })
 
